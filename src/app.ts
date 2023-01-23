@@ -1,10 +1,38 @@
-const http = require('http');
-const express = require('express');
+import express, { Express } from 'express';
+import { AppServerClass } from '@utils/setupServer';
+import databaseConnection from '@utils/setupDatabase';
+import 'colors';
 
-const app = express( );
 
-const server = http.createServer(app);
+class Application {
+  public initialize(): void { // initialize or start, which ever name is good
+    databaseConnection();
+    const app: Express = express();
+    const server: AppServerClass = new AppServerClass(app);
+    server.start(); // anytime we call this app, it will call this method
+  }
+}
 
-server.listen(3001, (req: any,res:any)=>{
-  console.log('listening on port 3001');
-});
+const application: Application = new Application();
+application.initialize(); // This starts the whole app
+
+
+
+
+
+
+
+
+
+
+
+// process.once('SIGUSR2', function () {
+//   process.kill(process.pid, 'SIGUSR2');
+// });
+
+// process.on('SIGINT', function () {
+//   // this is only called on ctrl+c, not restart
+//   process.kill(process.pid, 'SIGINT');
+// });
+
+// process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); });

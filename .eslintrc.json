@@ -41,6 +41,7 @@
           ["internal", "parent", "sibling", "index"]
         ]
       }
-    ]
+    ],
+    "settings": { "import/resolver": { "node": { "moduleDirectory": ["node_modules", "src/"] } } }
   }
 }

@@ -29,6 +29,7 @@
       "@services/*": ["src/shared/services/*"],
       "@sockets/*": ["src/shared/sockets/*"],
       "@workers/*": ["src/shared/workers/*"],
+      "@utils/*": ["src/utils/*"],
       "@root/*": ["src/*"]
     }
   }

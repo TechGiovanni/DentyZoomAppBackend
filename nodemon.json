@@ -4,7 +4,9 @@
   "ext": "ts,js,json",
   "ignore": ["node_modules", "coverage", "dist"],
   "exec": "ts-node -r tsconfig-paths/register src/app.ts",
+  "delay": "1500ms",
   "restartable": "rs",
+  "signal": "SIGHUP",
   "events": {
     "restart": "osascript -e 'display notification \"app restarted\" with title \"nodemon\"'"
   },
