@@ -6,6 +6,6 @@
   "bracketSpacing": true,
   "printWidth": 140,
   "proseWrap": "always",
-  "useTabs": false,
-  "arrowParens": "avoid",
+  "useTabs": true,
+  "arrowParents": "avoid"
 }

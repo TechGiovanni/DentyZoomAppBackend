@@ -2,37 +2,34 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "target": "ES6",
-      "module": "commonjs",
-      "lib": ["DOM", "ES2015"],
-      "baseUrl": ".",
-      "outDir": "./build",
-      "rootDir": "./src",
-      "strict": true,
-      "noImplicitAny": true,
-      "noUnusedLocals": false,
-      "noUnusedParameters": false,
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "sourceMap": true,
-      // experimental decorators - Options
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "forceConsistentCasingInFileNames": true,
-      "allowSyntheticDefaultImports": true,
-      "pretty": true,
-      "resolveJsonModule": true,
-      "plugins": [
-        { "transform": "typescript-transform-paths" },
-        { "transform": "typescript-transform-paths", "afterDeclarations": true },
-      ],
-      "paths": {
-        "@globals/*": ["src/shared/globals/*"],
-        "@services/*": ["src/shared/services/*"],
-        "@sockets/*": ["src/shared/sockets/*"],
-        "@workers/*": ["src/shared/workers/*"],
-
-        // Make sure root is at the end. meaning everything in the src folder once it passes the above routes, will be imported with @root = './'. so routes.ts and config.ts will be imported with @root = @root/config.ts or @root/routes.ts
-        "@root/*": ["src/*"]
-      }
+    "module": "commonjs",
+    "lib": ["DOM", "ES2015"],
+    "baseUrl": ".",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
+    "paths": {
+      "@globals/*": ["src/shared/globals/*"],
+      "@services/*": ["src/shared/services/*"],
+      "@sockets/*": ["src/shared/sockets/*"],
+      "@workers/*": ["src/shared/workers/*"],
+      "@root/*": ["src/*"]
+    }
   }
 }
