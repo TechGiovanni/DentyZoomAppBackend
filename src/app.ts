@@ -2,14 +2,20 @@ import express, { Express } from 'express';
 import { AppServerClass } from '@utils/setupServer';
 import databaseConnection from '@utils/setupDatabase';
 import 'colors';
+import { config } from '@utils/config'
 
 
 class Application {
   public initialize(): void { // initialize or start, which ever name is good
+    this.loadConfig();
     databaseConnection();
     const app: Express = express();
     const server: AppServerClass = new AppServerClass(app);
     server.start(); // anytime we call this app, it will call this method
+  }
+
+  private loadConfig(): void { // validate env variables
+    config.validateConfig()
   }
 }
 

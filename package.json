@@ -4,10 +4,9 @@
   "description": "App to socialize. My favorite backend app",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node -r tsconfig-paths/register build/app.js",
-    "start:build": "rm -rf build && prettier --write src/ && twc -w",
     "dev:start": "nodemon -r tsconfig-paths/register src/app.ts | ./node_modules/.bin/bunyan",
     "dev:conc": "concurrently \"ttsc -p tsconfig.prod.json --watch\" \"nodemon -r tsconfig-paths/register src/app.ts | ./node_modules/.bin/bunyan\"",
+    "dev:build": "rm -rf build && prettier --write src/ && twc -w",
     "dev:nodemon": "nodemon | ./node_modules/.bin/bunyan",
     "lint:check": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
@@ -25,6 +24,7 @@
   "dependencies": {
     "@socket.io/redis-adapter": "^8.0.1",
     "axios": "^1.2.3",
+    "cloudinary": "^1.33.0",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",

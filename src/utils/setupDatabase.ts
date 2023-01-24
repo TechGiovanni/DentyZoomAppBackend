@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
+import { config } from '@utils/config'
+import { logger } from '@utils/logger'
 import bunyan from 'bunyan';
-const log = bunyan.createLogger({name: "setupServer"});
-
+const log: bunyan = logger.createLogger("setupDatabase");
 
 export default () => {
   const connect = () => {
     mongoose.set('strictQuery', true);
-    mongoose.connect(`${process.env.MONGODB_URL}`)
+    mongoose.connect(`${config.MONGODB_URL}`)
     .then(() => {
       log.info("Successfully connected to database".green)
     }).catch((error) => {
